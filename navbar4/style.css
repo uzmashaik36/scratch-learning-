@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  color: #fff;
+  height: 200vh;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 20px;
+  margin: 0 auto;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  z-index: -1;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* Active */
+.nav-links a.active {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 1rem;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.hero {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
